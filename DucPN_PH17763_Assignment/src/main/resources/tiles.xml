@@ -1,0 +1,50 @@
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="baselayout"
+		template="/views/layout/layout.jsp">
+		<put-attribute name="header"
+			value="/views/layout/header.jsp" />
+		<put-attribute name="menu"
+			value="/views/layout/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/views/layout/footer.jsp" />
+	</definition>
+
+	<definition name="admin/*/*" extends="baselayout">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/views/admin/{1}/{2}.jsp" />
+	</definition>
+	<definition name="user/*/*" extends="baselayout">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/views/user/{1}/{2}.jsp" />
+	</definition>
+
+	<definition name="trangchu" extends="baselayout">
+		<put-attribute name="body" value="/views/trangchu.jsp" />
+	</definition>
+
+	<definition name="giohang" extends="baselayout">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body" value="/views/gioHang.jsp" />
+	</definition>
+
+	<definition name="login" extends="baselayout">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body" value="/views/login.jsp" />
+	</definition>
+	<definition name="register" extends="baselayout">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body" value="/views/register.jsp" />
+	</definition>
+	<definition name="admin/quanlygiohang" extends="baselayout">
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body"
+			value="/views/admin/order/index.jsp" />
+	</definition>
+
+</tiles-definitions>
